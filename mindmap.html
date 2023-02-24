@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.14.4/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@6.7.0"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.14.4"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.14.4/dist/index.umd.min.js"></script><script>(r => {
+                setTimeout(r);
+              })(() => {
+  const {
+    markmap,
+    mm
+  } = window;
+  const toolbar = new markmap.Toolbar();
+  toolbar.attach(mm);
+  const el = toolbar.render();
+  el.setAttribute('style', 'position:absolute;bottom:20px;right:20px');
+  document.body.append(el);
+})</script><script>((getMarkmap, getOptions, root, jsonOptions) => {
+        const markmap = getMarkmap();
+        window.mm = markmap.Markmap.create('svg#mindmap', (getOptions || markmap.deriveOptions)(jsonOptions), root);
+      })(() => window.markmap,null,{"type":"heading","depth":0,"payload":{"lines":[0,1]},"content":"K8s","children":[{"type":"heading","depth":1,"payload":{"lines":[7,8]},"content":"Pod","children":[{"type":"bullet_list","depth":2,"payload":{"lines":[9,13]},"content":"","children":[{"type":"list_item","depth":3,"payload":{"lines":[9,10]},"content":"Abstraction over container."},{"type":"list_item","depth":3,"payload":{"lines":[10,11]},"content":"1 app per Pod."},{"type":"list_item","depth":3,"payload":{"lines":[11,12]},"content":"Each Pod get its own IP adds."}]},{"type":"heading","depth":2,"payload":{"lines":[13,14]},"content":"Service","children":[{"type":"list_item","depth":3,"payload":{"lines":[15,16]},"content":"Static IP adds to attach to Pod."},{"type":"list_item","depth":3,"payload":{"lines":[16,17]},"content":"Type:","children":[{"type":"list_item","depth":4,"payload":{"lines":[17,18]},"content":"External service (Ingress)."},{"type":"list_item","depth":4,"payload":{"lines":[18,19]},"content":"Internal service."}]}]},{"type":"heading","depth":2,"payload":{"lines":[20,21]},"content":"ConfigMap","children":[{"type":"list_item","depth":3,"payload":{"lines":[22,23]},"content":"External configuration of your app."},{"type":"list_item","depth":3,"payload":{"lines":[23,24]},"content":"Ex: db service name."}]},{"type":"heading","depth":2,"payload":{"lines":[25,26]},"content":"Secret","children":[{"type":"list_item","depth":3,"payload":{"lines":[27,28]},"content":"Use to store secret data (Ex: password)."},{"type":"list_item","depth":3,"payload":{"lines":[28,29]},"content":"base64 encoded."}]},{"type":"heading","depth":2,"payload":{"lines":[30,31]},"content":"Volumes","children":[{"type":"list_item","depth":3,"payload":{"lines":[32,33]},"content":"Attach storage to Pod."},{"type":"list_item","depth":3,"payload":{"lines":[33,34]},"content":"Data persistance ."},{"type":"list_item","depth":3,"payload":{"lines":[34,35]},"content":"Storage can be local, remote of outside of the K8s cluster."}]},{"type":"heading","depth":2,"payload":{"lines":[36,37]},"content":"Deployment","children":[{"type":"list_item","depth":3,"payload":{"lines":[37,38]},"content":"Define blueprints for Pods, ex: number of Pods need to replicate."},{"type":"list_item","depth":3,"payload":{"lines":[38,39]},"content":"Can config the scale."},{"type":"list_item","depth":3,"payload":{"lines":[39,40]},"content":"Abtraction of Pods."}]},{"type":"heading","depth":2,"payload":{"lines":[41,42]},"content":"StatefulSet","children":[{"type":"list_item","depth":3,"payload":{"lines":[42,43]},"content":"For stateful apps like ElasticSearch, DB."},{"type":"list_item","depth":3,"payload":{"lines":[43,44]},"content":"Use StatefulSet (not Deployment) for stateful apps."},{"type":"list_item","depth":3,"payload":{"lines":[44,45]},"content":"No recommended, not easy to use."}]}]},{"type":"heading","depth":1,"payload":{"lines":[47,48]},"content":"Refs (22:01):","children":[{"type":"list_item","depth":2,"payload":{"lines":[48,49]},"content":"https://www.youtube.com/watch?v=X48VuDVv0do&amp;t=1358s"}]}]},{})</script>
+</body>
+</html>
