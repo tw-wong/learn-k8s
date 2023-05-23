@@ -42,5 +42,38 @@
 - No recommended, not easy to use.
 
 
-## Refs (22:01):
-- https://www.youtube.com/watch?v=X48VuDVv0do&t=1358s
+## Node
+
+### Type
+#### Master node
+
+##### 4 Processes required
+- Api Server: cluster gateway, authentication (gatekeeper).
+
+- Scheduler: Check node resources, decide which node new Pod should be scheduled (ex: start Pod).
+    - send request to Kubelet.
+
+- Controller manager: detects cluster state changes (ex: Pod die), reschedule it when necessary.
+    - send request to Scheduler.
+
+- etcd: Key value store for cluster state.
+
+
+#### Worker node
+
+##### 3 Processes required
+
+- Kubelet: interface to interacts with both container and node.
+- Kube proxy: forwards the requests.
+- Container runtime.
+
+## Cluster setup
+
+### Basic architecture
+- 2 Master node, 3 worker nodes.
+- Master node should have lower spec (CPU, RAM) compare with Worker node.
+
+### Minikube and Kubectl
+
+## Refs (34:50):
+- https://youtu.be/X48VuDVv0do?t=2090
